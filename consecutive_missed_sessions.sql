@@ -1,4 +1,5 @@
---Adding sql code
+--Adding sql code 
+-- This is code for consecutive missed sessions
 WITH consecutive_missed_sessions AS (
  SELECT UserID, SessionDate,
  CASE WHEN LAG(IsCompleted, 1, 1) OVER (PARTITION BY UserID ORDER BY SessionDate) = 0
